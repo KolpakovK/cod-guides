@@ -15,7 +15,11 @@
         "laravel/framework": "^9.0",
         "laravel/tinker": "^2.7",
         "statamic/cms": "3.4.*",
-        "laravel/sanctum": "^2.14"
+        "laravel/sanctum": "^2.14",
+        "ext-bcmath": "*",
+        "ext-exif": "*",
+        "ext-gd": "*",
+        "ext-mbstring": "*"
     },
     "require-dev": {
         "barryvdh/laravel-debugbar": "^3.6",

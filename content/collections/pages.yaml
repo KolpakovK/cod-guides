@@ -1,8 +1,8 @@
-title: pages
+title: Pages
 template: default
 layout: default
 revisions: false
-route: '/{slug}'
+route: '{slug}'
 sort_dir: asc
 date_behavior:
   past: public
