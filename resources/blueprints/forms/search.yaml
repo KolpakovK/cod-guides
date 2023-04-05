@@ -1,0 +1,15 @@
+sections:
+  main:
+    display: Основное
+    fields:
+      -
+        handle: search-request
+        field:
+          input_type: text
+          antlers: false
+          display: search-request
+          type: text
+          icon: text
+          listable: hidden
+          instructions_position: above
+          visibility: visible

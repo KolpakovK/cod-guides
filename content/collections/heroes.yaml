@@ -1,0 +1,14 @@
+title: heroes
+template: post
+layout: post
+revisions: false
+route: '/heroes/{slug}'
+date: true
+sort_dir: desc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'

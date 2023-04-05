@@ -1,0 +1,14 @@
+.box{
+	border-radius: 24px;
+}
+
+article img{
+	border-radius: 16px;
+}
+
+@media only screen and (max-width:450px){
+	.columns{
+		width: 100% !important;
+		margin: 0 auto;
+	}
+}

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title ?? site:name }}</title>
+    <link rel="stylesheet" href="{{ mix src='/css/site.css' }}">
+    <link rel="icon" href="{{ osnova:logo}}" type="image/png">
+</head>
+<body class="has-background-white-ter">
+    <div class="container is-max-widescreen">
+        
+        {{partial:_nav}}
+        
+        <!-- hero -->
+        <div class="column is-offset-1 is-10">
+            
+            <div>
+                <h1 class="block subtitle is-size-1 is-size-3-mobile">
+                    {{ title }}
+                </h1>
+                <p class="block has-text-grey-dark">
+                    {{content}}
+                </p>
+            </div>
+            
+            {{ collection from="{{posts}}" paginate="12" as="posts" }}
+            <div class="columns mt-6 is-6 is-flex-wrap-wrap">
+                
+                {{ if no_results }}
+                <p class="title is-size-3">Ох, нет результатов.</p>
+                {{ /if }}
+                
+                {{posts}}
+                <div class="column is-4">
+                    <div class="card">
+                        {{if cover-image}}
+                        <div class="card-image">
+                            <figure class="image is-16by3">
+                                <img src="{{cover-image}}">
+                            </figure>
+                        </div>
+                        {{/if}}
+                        
+                        <div class="card-content">
+                            <h2 class="title is-size-4">{{title}}</h2>
+                        </div>
+                        
+                        <footer class="card-footer">
+                            <a href="{{url}}" class="card-footer-item">Читать далее</a>
+                        </footer>
+                    </div>
+                </div>
+                {{/posts}}
+            </div>
+            
+            
+            <div class="columns mt-3">
+                {{ paginate }}
+                <div class="column is-12 is-flex is-justify-content-space-between is-align-items-center">
+                    <a class="button" href="{{ prev_page }}">⬅ Назад</a>
+                    
+                    <p>
+                        {{ current_page }} с {{ total_pages }} Страниц
+                        (Всего {{ total_items }} записей)
+                    </p>
+                    
+                    <a class="button" href="{{ next_page }}">Далее ➡</a>
+                </div>
+                {{ /paginate }}
+            </div>
+            
+            {{/collection}}
+            
+        </div>
+        <!-- hero end -->
+        
+        {{partial:_footer}}
+        
+        
+    </div>
+    
+    <style>
+        
+    </style>
+    
+    <script src="https://kit.fontawesome.com/d6f1db1d92.js" crossorigin="anonymous"></script>
+    <script src="{{ mix src='/js/site.js' }}"></script>
+    <script src="{{ mix src='/js/main.js' }}"></script>
+</body>
+</html>

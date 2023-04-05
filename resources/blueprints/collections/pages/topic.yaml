@@ -1,0 +1,78 @@
+title: Topic
+sections:
+  main:
+    display: Header
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: layout
+        field:
+          hide_partials: true
+          blueprint: false
+          display: layout
+          type: template
+          icon: template
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+      -
+        handle: parent
+        field:
+          type: entries
+          collections:
+            - pages
+          max_items: 1
+          listable: false
+          localizable: true
+      -
+        handle: blog-category
+        field:
+          default: false
+          display: blog-category
+          type: toggle
+          icon: toggle
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+  novaya_sekciya:
+    display: 'Topic elements'
+    fields:
+      -
+        handle: content
+        field:
+          restrict: false
+          automatic_line_breaks: true
+          automatic_links: false
+          escape_markup: false
+          smartypants: false
+          antlers: false
+          display: content
+          type: markdown
+          icon: markdown
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: posts
+        field:
+          mode: default
+          display: posts
+          type: collections
+          icon: collections
+          listable: hidden
+          instructions_position: above
+          visibility: visible

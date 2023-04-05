@@ -1,0 +1,15 @@
+super: true
+name: kyrylo
+id: d597a839-d32d-413a-9cf1-1dc1d329099f
+password_hash: $2y$10$EHfH8a6nymo.0aDhwEZYd.76faWRlYg9eARrH48GzgxYNnCeMxjUW
+preferences:
+  locale: ru
+  assets:
+    images:
+      mode: grid
+    assets:
+      mode: grid
+  collections:
+    pages:
+      columns:
+        - title

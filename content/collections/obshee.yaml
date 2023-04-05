@@ -1,0 +1,13 @@
+title: general
+template: post
+layout: post
+revisions: false
+route: '/general/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'

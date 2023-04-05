@@ -1,0 +1,13 @@
+title: mounts
+template: post
+layout: post
+revisions: false
+route: '/mounts/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'

@@ -1,0 +1,13 @@
+title: beginers
+template: post
+layout: post
+revisions: false
+route: '/beginers/{slug}'
+sort_dir: asc
+date_behavior:
+  past: public
+  future: private
+preview_targets:
+  -
+    label: Entry
+    url: '{permalink}'

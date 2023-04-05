@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title ?? site:name }}</title>
+    <link rel="stylesheet" href="{{ mix src='/css/site.css' }}">
+    <link rel="icon" href="{{ osnova:logo}}" type="image/png">
+</head>
+<body class="has-background-white-ter">
+    <div class="container is-max-widescreen">
+        
+        {{partial:_nav}}
+        
+        <!-- hero -->
+        <div class="column is-offset-1 is-10">
+            
+            <h1 class="block subtitle is-size-3 is-size-4-mobile">
+                Результаты поиска
+            </h1>
+            <h2 class="block subtitle is-size-1 is-size-3-mobile">
+                {{ get:q }}
+            </h2>
+            
+        </div>
+        <!-- hero end -->
+
+        <div class="column is-10 is-offset-1 mt-5">
+            {{search:results}}
+
+            {{if no_results}}
+                <h1 class="block subtitle is-size-3 is-size-4-mobile">
+                    Не найдено!
+                </h1>
+            {{else}}
+
+            <div class="box is-flex is-justify-content-space-between is-align-items-center">
+                <a href="{{ url }}" style="width: -webkit-fill-available;">
+                    <h2 class="subtitle is-size-5">{{ title }}</h2>
+                </a>
+                <span class="icon is-small">
+                    <i class="fa-solid fa-arrow-right"></i>
+                </span>
+            </div>
+            {{/if}}
+
+            {{/search:results}}
+        </div>
+        
+        {{partial:_footer}}
+        
+        
+    </div>
+    
+    <style>
+        
+    </style>
+    
+    <script src="https://kit.fontawesome.com/d6f1db1d92.js" crossorigin="anonymous"></script>
+    <script src="{{ mix src='/js/site.js' }}"></script>
+    <script src="{{ mix src='/js/main.js' }}"></script>
+</body>
+</html>

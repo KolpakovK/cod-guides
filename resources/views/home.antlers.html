@@ -1,0 +1,173 @@
+<!doctype html>
+<html lang="{{ site:short_locale }}">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{{ title ?? site:name }}</title>
+    <link rel="stylesheet" href="{{ mix src='/css/site.css' }}">
+    <link rel="icon" href="{{ osnova:logo}}" type="image/png">
+</head>
+<body class="has-background-white-ter">
+    <div class="container is-max-widescreen">
+        
+        {{partial:_nav}}
+        
+        <!-- hero -->
+        <div class="columns block p-5" id="hero">
+            <div class="column is-6">
+                <h1 class="subtitle has-text-white is-size-1 is-size-3-mobile">
+                    {{ hero-header }}
+                </h1>
+                <p class="has-text-grey-lighter is-size-6">
+                    {{ hero-description }}
+                </p>
+            </div>
+            
+            <div class="column is-offset-1 is-5 box p-4" style="height: fit-content;">
+                <div class="block">
+                    <h3 class="title is-size-5">
+                        Категории статей
+                    </h3>
+                </div>
+                
+                <div class="block buttons">
+                    {{ collection from="pages"}} 
+                    {{if blog-category}}
+                    <a href="{{url}}" class="button is-light is-fullwidth">
+                        <span style="width: -webkit-fill-available;" class="has-text-left">{{title}}</span>
+                        <span class="icon is-small">
+                            <i class="fa-solid fa-arrow-right"></i>
+                        </span>
+                    </a>
+                    {{/if}}
+                    {{ /collection }}
+                </div>
+                
+            </div>
+        </div>
+        <!-- hero end -->
+        
+        {{# last posts #}}
+        <div class="columns mt-6">
+            <div class="column is-10 is-offset-1"> 
+                <h2 class="title is-size-4 block has-text-centered">Последнии публикации про героев</h2>
+            </div>
+        </div>
+        
+        <div class="columns is-6 mt-3">
+            {{collection from='heroes' limit="4"}}
+            
+            <div class="column is-3">
+                <div class="card">
+                    {{if cover-image}}
+                    <div class="card-image">
+                        <figure class="image is-16by3">
+                            <img src="{{cover-image}}">
+                        </figure>
+                    </div>
+                    {{/if}}
+                    
+                    <div class="card-content">
+                        <h2 class="title is-size-4">{{title}}</h2>
+                    </div>
+                    
+                    <footer class="card-footer">
+                        <a href="{{url}}" class="card-footer-item">Читать далее</a>
+                    </footer>
+                </div>
+            </div>
+            {{/collection}}
+        </div>
+
+
+        <div class="columns mt-6">
+            <div class="column is-10 is-offset-1"> 
+                <h2 class="title is-size-4 block has-text-centered">Последнии публикации для новичков</h2>
+            </div>
+        </div>
+        
+        <div class="columns is-6 mt-3">
+            {{collection from='beginers' limit="4"}}
+            
+            <div class="column is-3">
+                <div class="card">
+                    {{if cover-image}}
+                    <div class="card-image">
+                        <figure class="image is-16by3">
+                            <img src="{{cover-image}}">
+                        </figure>
+                    </div>
+                    {{/if}}
+                    
+                    <div class="card-content">
+                        <h2 class="title is-size-4">{{title}}</h2>
+                    </div>
+                    
+                    <footer class="card-footer">
+                        <a href="{{url}}" class="card-footer-item">Читать далее</a>
+                    </footer>
+                </div>
+            </div>
+            {{/collection}}
+        </div>
+
+        <div class="columns mt-6">
+            <div class="column is-10 is-offset-1"> 
+                <h2 class="title is-size-4 block has-text-centered">Последнии публикации про маунтов</h2>
+            </div>
+        </div>
+        
+        <div class="columns is-6 mt-3">
+            {{collection from='mounts' limit="4"}}
+            
+            <div class="column is-3">
+                <div class="card">
+                    {{if cover-image}}
+                    <div class="card-image">
+                        <figure class="image is-16by3">
+                            <img src="{{cover-image}}">
+                        </figure>
+                    </div>
+                    {{/if}}
+                    
+                    <div class="card-content">
+                        <h2 class="title is-size-4">{{title}}</h2>
+                    </div>
+                    
+                    <footer class="card-footer">
+                        <a href="{{url}}" class="card-footer-item">Читать далее</a>
+                    </footer>
+                </div>
+            </div>
+            {{/collection}}
+        </div>
+
+        <div class="columns block mt-6">
+            <div class="column is-10 is-offset-1">
+                <h2 class="title is-size-4 block has-text-centered">Кто мы</h2>
+                <p class="block has-text-gray has-text-centered">
+                    {{ about-us }}
+                </p>
+            </div>
+        </div>
+        {{# last posts end #}}
+        
+        {{partial:_footer}}
+        
+    </div>
+    
+    <style>
+        #hero{
+            background: url("{{hero-bg}}");
+            background-position: center;
+            background-size: cover;
+            border-radius: 24px;
+        }
+    </style>
+    
+    <script src="https://kit.fontawesome.com/d6f1db1d92.js" crossorigin="anonymous"></script>
+    <script src="{{ mix src='/js/site.js' }}"></script>
+    <script src="{{ mix src='/js/main.js' }}"></script>
+</body>
+</html>

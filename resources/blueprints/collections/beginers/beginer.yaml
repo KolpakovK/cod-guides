@@ -1,0 +1,51 @@
+sections:
+  main:
+    display: Основное
+    fields:
+      -
+        handle: title
+        field:
+          type: text
+          required: true
+          validate:
+            - required
+      -
+        handle: layout
+        field:
+          hide_partials: true
+          blueprint: false
+          display: Layout
+          type: template
+          icon: template
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: cover-image
+        field:
+          mode: list
+          container: assets
+          restrict: false
+          allow_uploads: true
+          show_filename: true
+          max_files: 1
+          display: cover-image
+          type: assets
+          icon: assets
+          listable: hidden
+          instructions_position: above
+          visibility: visible
+      -
+        handle: content
+        field:
+          type: markdown
+          localizable: true
+  sidebar:
+    display: Sidebar
+    fields:
+      -
+        handle: slug
+        field:
+          type: slug
+          localizable: true
+title: Post
