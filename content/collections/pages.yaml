@@ -1,5 +1,5 @@
 title: Pages
-template: default
+template: pages/show
 layout: default
 revisions: false
 route: '{slug}'
